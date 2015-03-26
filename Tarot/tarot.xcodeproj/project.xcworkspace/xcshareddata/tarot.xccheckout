@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>39A72FCD-8B23-436C-8630-72F8ED10FE20</string>
+	<key>IDESourceControlProjectName</key>
+	<string>tarot</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1023AC60317AC515B4E2BCBC1EB7C30BAAAD3F7C</key>
+		<string>https://github.com/lrocali/ISE.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tarot Enum 2/tarot.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1023AC60317AC515B4E2BCBC1EB7C30BAAAD3F7C</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/lrocali/ISE.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1023AC60317AC515B4E2BCBC1EB7C30BAAAD3F7C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1023AC60317AC515B4E2BCBC1EB7C30BAAAD3F7C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ISE</string>
+		</dict>
+	</array>
+</dict>
+</plist>
