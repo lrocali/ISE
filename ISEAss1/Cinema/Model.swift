@@ -8,7 +8,7 @@
 import Foundation
 
 class Model {
-    
+    //VIxeee alterei
     //Creating Dictionary of cinemas and their movies
     let cinemas = ["Cineplex Australia": ["movie 1","movie 2"],
         "Dendy Cinemas": ["movie 11","movie 22"],
