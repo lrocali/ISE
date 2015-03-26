@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		292F70841AB2CEBA00985839 /* Chariot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F706E1AB2CEBA00985839 /* Chariot.jpg */; };
+		292F70851AB2CEBA00985839 /* Death.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F706F1AB2CEBA00985839 /* Death.jpg */; };
+		292F70861AB2CEBA00985839 /* Devil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70701AB2CEBA00985839 /* Devil.jpg */; };
+		292F70871AB2CEBA00985839 /* Emperor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70711AB2CEBA00985839 /* Emperor.jpg */; };
+		292F70881AB2CEBA00985839 /* Empress.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70721AB2CEBA00985839 /* Empress.jpg */; };
+		292F70891AB2CEBA00985839 /* Fool.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70731AB2CEBA00985839 /* Fool.jpg */; };
+		292F708A1AB2CEBA00985839 /* HangedMan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70741AB2CEBA00985839 /* HangedMan.jpg */; };
+		292F708B1AB2CEBA00985839 /* Heirophant.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70751AB2CEBA00985839 /* Heirophant.jpg */; };
+		292F708C1AB2CEBA00985839 /* Hermit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70761AB2CEBA00985839 /* Hermit.jpg */; };
+		292F708D1AB2CEBA00985839 /* HighPriestess.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70771AB2CEBA00985839 /* HighPriestess.jpg */; };
+		292F708E1AB2CEBA00985839 /* Judgement.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70781AB2CEBA00985839 /* Judgement.jpg */; };
+		292F708F1AB2CEBA00985839 /* Justice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70791AB2CEBA00985839 /* Justice.jpg */; };
+		292F70901AB2CEBA00985839 /* Lovers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F707A1AB2CEBA00985839 /* Lovers.jpg */; };
+		292F70911AB2CEBA00985839 /* Magician.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F707B1AB2CEBA00985839 /* Magician.jpg */; };
+		292F70921AB2CEBA00985839 /* Moon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F707C1AB2CEBA00985839 /* Moon.jpg */; };
+		292F70931AB2CEBA00985839 /* Star.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F707D1AB2CEBA00985839 /* Star.jpg */; };
+		292F70941AB2CEBA00985839 /* Strength.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F707E1AB2CEBA00985839 /* Strength.jpg */; };
+		292F70951AB2CEBA00985839 /* Sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F707F1AB2CEBA00985839 /* Sun.jpg */; };
+		292F70961AB2CEBA00985839 /* Temperance.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70801AB2CEBA00985839 /* Temperance.jpg */; };
+		292F70971AB2CEBA00985839 /* Tower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70811AB2CEBA00985839 /* Tower.jpg */; };
+		292F70981AB2CEBA00985839 /* WheelOfFortune.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70821AB2CEBA00985839 /* WheelOfFortune.jpg */; };
+		292F70991AB2CEBA00985839 /* World.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292F70831AB2CEBA00985839 /* World.jpg */; };
+		292F709B1AB2E26E00985839 /* MajorArcanaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292F709A1AB2E26E00985839 /* MajorArcanaCard.swift */; };
+		DF5D1CB31AB1C4FD00174533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5D1CB21AB1C4FD00174533 /* AppDelegate.swift */; };
+		DF5D1CB51AB1C4FD00174533 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5D1CB41AB1C4FD00174533 /* ViewController.swift */; };
+		DF5D1CB81AB1C4FE00174533 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5D1CB61AB1C4FE00174533 /* Main.storyboard */; };
+		DF5D1CBA1AB1C4FE00174533 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5D1CB91AB1C4FE00174533 /* Images.xcassets */; };
+		DF5D1CBD1AB1C4FE00174533 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF5D1CBB1AB1C4FE00174533 /* LaunchScreen.xib */; };
+		DF5D1CC91AB1C4FE00174533 /* TarotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5D1CC81AB1C4FE00174533 /* TarotTests.swift */; };
+		DF5D1D311AB1D20900174533 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5D1D301AB1D20900174533 /* Model.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DF5D1CC31AB1C4FE00174533 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF5D1CA51AB1C4FD00174533 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF5D1CAC1AB1C4FD00174533;
+			remoteInfo = Tarot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		292F706E1AB2CEBA00985839 /* Chariot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Chariot.jpg; path = "../../tarotImages(2)/Chariot.jpg"; sourceTree = "<group>"; };
+		292F706F1AB2CEBA00985839 /* Death.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Death.jpg; path = "../../tarotImages(2)/Death.jpg"; sourceTree = "<group>"; };
+		292F70701AB2CEBA00985839 /* Devil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Devil.jpg; path = "../../tarotImages(2)/Devil.jpg"; sourceTree = "<group>"; };
+		292F70711AB2CEBA00985839 /* Emperor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Emperor.jpg; path = "../../tarotImages(2)/Emperor.jpg"; sourceTree = "<group>"; };
+		292F70721AB2CEBA00985839 /* Empress.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Empress.jpg; path = "../../tarotImages(2)/Empress.jpg"; sourceTree = "<group>"; };
+		292F70731AB2CEBA00985839 /* Fool.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Fool.jpg; path = "../../tarotImages(2)/Fool.jpg"; sourceTree = "<group>"; };
+		292F70741AB2CEBA00985839 /* HangedMan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = HangedMan.jpg; path = "../../tarotImages(2)/HangedMan.jpg"; sourceTree = "<group>"; };
+		292F70751AB2CEBA00985839 /* Heirophant.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Heirophant.jpg; path = "../../tarotImages(2)/Heirophant.jpg"; sourceTree = "<group>"; };
+		292F70761AB2CEBA00985839 /* Hermit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Hermit.jpg; path = "../../tarotImages(2)/Hermit.jpg"; sourceTree = "<group>"; };
+		292F70771AB2CEBA00985839 /* HighPriestess.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = HighPriestess.jpg; path = "../../tarotImages(2)/HighPriestess.jpg"; sourceTree = "<group>"; };
+		292F70781AB2CEBA00985839 /* Judgement.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Judgement.jpg; path = "../../tarotImages(2)/Judgement.jpg"; sourceTree = "<group>"; };
+		292F70791AB2CEBA00985839 /* Justice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Justice.jpg; path = "../../tarotImages(2)/Justice.jpg"; sourceTree = "<group>"; };
+		292F707A1AB2CEBA00985839 /* Lovers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Lovers.jpg; path = "../../tarotImages(2)/Lovers.jpg"; sourceTree = "<group>"; };
+		292F707B1AB2CEBA00985839 /* Magician.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Magician.jpg; path = "../../tarotImages(2)/Magician.jpg"; sourceTree = "<group>"; };
+		292F707C1AB2CEBA00985839 /* Moon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Moon.jpg; path = "../../tarotImages(2)/Moon.jpg"; sourceTree = "<group>"; };
+		292F707D1AB2CEBA00985839 /* Star.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Star.jpg; path = "../../tarotImages(2)/Star.jpg"; sourceTree = "<group>"; };
+		292F707E1AB2CEBA00985839 /* Strength.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Strength.jpg; path = "../../tarotImages(2)/Strength.jpg"; sourceTree = "<group>"; };
+		292F707F1AB2CEBA00985839 /* Sun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Sun.jpg; path = "../../tarotImages(2)/Sun.jpg"; sourceTree = "<group>"; };
+		292F70801AB2CEBA00985839 /* Temperance.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Temperance.jpg; path = "../../tarotImages(2)/Temperance.jpg"; sourceTree = "<group>"; };
+		292F70811AB2CEBA00985839 /* Tower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Tower.jpg; path = "../../tarotImages(2)/Tower.jpg"; sourceTree = "<group>"; };
+		292F70821AB2CEBA00985839 /* WheelOfFortune.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = WheelOfFortune.jpg; path = "../../tarotImages(2)/WheelOfFortune.jpg"; sourceTree = "<group>"; };
+		292F70831AB2CEBA00985839 /* World.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = World.jpg; path = "../../tarotImages(2)/World.jpg"; sourceTree = "<group>"; };
+		292F709A1AB2E26E00985839 /* MajorArcanaCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MajorArcanaCard.swift; sourceTree = "<group>"; };
+		DF5D1CAD1AB1C4FD00174533 /* Tarot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tarot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF5D1CB11AB1C4FD00174533 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF5D1CB21AB1C4FD00174533 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DF5D1CB41AB1C4FD00174533 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF5D1CB71AB1C4FE00174533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DF5D1CB91AB1C4FE00174533 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DF5D1CBC1AB1C4FE00174533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DF5D1CC21AB1C4FE00174533 /* TarotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TarotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF5D1CC71AB1C4FE00174533 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF5D1CC81AB1C4FE00174533 /* TarotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotTests.swift; sourceTree = "<group>"; };
+		DF5D1D301AB1D20900174533 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF5D1CAA1AB1C4FD00174533 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF5D1CBF1AB1C4FE00174533 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DF5D1CA41AB1C4FD00174533 = {
+			isa = PBXGroup;
+			children = (
+				DF5D1CAF1AB1C4FD00174533 /* Tarot */,
+				DF5D1CC51AB1C4FE00174533 /* TarotTests */,
+				DF5D1CAE1AB1C4FD00174533 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DF5D1CAE1AB1C4FD00174533 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF5D1CAD1AB1C4FD00174533 /* Tarot.app */,
+				DF5D1CC21AB1C4FE00174533 /* TarotTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF5D1CAF1AB1C4FD00174533 /* Tarot */ = {
+			isa = PBXGroup;
+			children = (
+				DF5D1D321AB1DCF800174533 /* Controller */,
+				DF5D1D2F1AB1D18000174533 /* Model */,
+				DF5D1D001AB1C5B000174533 /* Images */,
+				DF5D1CB21AB1C4FD00174533 /* AppDelegate.swift */,
+				DF5D1CB61AB1C4FE00174533 /* Main.storyboard */,
+				DF5D1CB91AB1C4FE00174533 /* Images.xcassets */,
+				DF5D1CBB1AB1C4FE00174533 /* LaunchScreen.xib */,
+				DF5D1CB01AB1C4FD00174533 /* Supporting Files */,
+			);
+			path = Tarot;
+			sourceTree = "<group>";
+		};
+		DF5D1CB01AB1C4FD00174533 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF5D1CB11AB1C4FD00174533 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DF5D1CC51AB1C4FE00174533 /* TarotTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF5D1CC81AB1C4FE00174533 /* TarotTests.swift */,
+				DF5D1CC61AB1C4FE00174533 /* Supporting Files */,
+			);
+			path = TarotTests;
+			sourceTree = "<group>";
+		};
+		DF5D1CC61AB1C4FE00174533 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF5D1CC71AB1C4FE00174533 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DF5D1D001AB1C5B000174533 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DF5D1D011AB1C5C200174533 /* Major Arcana */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		DF5D1D011AB1C5C200174533 /* Major Arcana */ = {
+			isa = PBXGroup;
+			children = (
+				292F706E1AB2CEBA00985839 /* Chariot.jpg */,
+				292F706F1AB2CEBA00985839 /* Death.jpg */,
+				292F70701AB2CEBA00985839 /* Devil.jpg */,
+				292F70711AB2CEBA00985839 /* Emperor.jpg */,
+				292F70721AB2CEBA00985839 /* Empress.jpg */,
+				292F70731AB2CEBA00985839 /* Fool.jpg */,
+				292F70741AB2CEBA00985839 /* HangedMan.jpg */,
+				292F70751AB2CEBA00985839 /* Heirophant.jpg */,
+				292F70761AB2CEBA00985839 /* Hermit.jpg */,
+				292F70771AB2CEBA00985839 /* HighPriestess.jpg */,
+				292F70781AB2CEBA00985839 /* Judgement.jpg */,
+				292F70791AB2CEBA00985839 /* Justice.jpg */,
+				292F707A1AB2CEBA00985839 /* Lovers.jpg */,
+				292F707B1AB2CEBA00985839 /* Magician.jpg */,
+				292F707C1AB2CEBA00985839 /* Moon.jpg */,
+				292F707D1AB2CEBA00985839 /* Star.jpg */,
+				292F707E1AB2CEBA00985839 /* Strength.jpg */,
+				292F707F1AB2CEBA00985839 /* Sun.jpg */,
+				292F70801AB2CEBA00985839 /* Temperance.jpg */,
+				292F70811AB2CEBA00985839 /* Tower.jpg */,
+				292F70821AB2CEBA00985839 /* WheelOfFortune.jpg */,
+				292F70831AB2CEBA00985839 /* World.jpg */,
+			);
+			name = "Major Arcana";
+			sourceTree = "<group>";
+		};
+		DF5D1D2F1AB1D18000174533 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF5D1D301AB1D20900174533 /* Model.swift */,
+				292F709A1AB2E26E00985839 /* MajorArcanaCard.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DF5D1D321AB1DCF800174533 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF5D1CB41AB1C4FD00174533 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF5D1CAC1AB1C4FD00174533 /* Tarot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF5D1CCC1AB1C4FE00174533 /* Build configuration list for PBXNativeTarget "Tarot" */;
+			buildPhases = (
+				DF5D1CA91AB1C4FD00174533 /* Sources */,
+				DF5D1CAA1AB1C4FD00174533 /* Frameworks */,
+				DF5D1CAB1AB1C4FD00174533 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tarot;
+			productName = Tarot;
+			productReference = DF5D1CAD1AB1C4FD00174533 /* Tarot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DF5D1CC11AB1C4FE00174533 /* TarotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF5D1CCF1AB1C4FE00174533 /* Build configuration list for PBXNativeTarget "TarotTests" */;
+			buildPhases = (
+				DF5D1CBE1AB1C4FE00174533 /* Sources */,
+				DF5D1CBF1AB1C4FE00174533 /* Frameworks */,
+				DF5D1CC01AB1C4FE00174533 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF5D1CC41AB1C4FE00174533 /* PBXTargetDependency */,
+			);
+			name = TarotTests;
+			productName = TarotTests;
+			productReference = DF5D1CC21AB1C4FE00174533 /* TarotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF5D1CA51AB1C4FD00174533 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = RMIT;
+				TargetAttributes = {
+					DF5D1CAC1AB1C4FD00174533 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					DF5D1CC11AB1C4FE00174533 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = DF5D1CAC1AB1C4FD00174533;
+					};
+				};
+			};
+			buildConfigurationList = DF5D1CA81AB1C4FD00174533 /* Build configuration list for PBXProject "tarot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DF5D1CA41AB1C4FD00174533;
+			productRefGroup = DF5D1CAE1AB1C4FD00174533 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF5D1CAC1AB1C4FD00174533 /* Tarot */,
+				DF5D1CC11AB1C4FE00174533 /* TarotTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF5D1CAB1AB1C4FD00174533 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				292F70951AB2CEBA00985839 /* Sun.jpg in Resources */,
+				292F70911AB2CEBA00985839 /* Magician.jpg in Resources */,
+				292F708F1AB2CEBA00985839 /* Justice.jpg in Resources */,
+				292F70981AB2CEBA00985839 /* WheelOfFortune.jpg in Resources */,
+				292F708D1AB2CEBA00985839 /* HighPriestess.jpg in Resources */,
+				292F70991AB2CEBA00985839 /* World.jpg in Resources */,
+				292F70851AB2CEBA00985839 /* Death.jpg in Resources */,
+				292F708E1AB2CEBA00985839 /* Judgement.jpg in Resources */,
+				292F70861AB2CEBA00985839 /* Devil.jpg in Resources */,
+				292F70971AB2CEBA00985839 /* Tower.jpg in Resources */,
+				292F70841AB2CEBA00985839 /* Chariot.jpg in Resources */,
+				292F70901AB2CEBA00985839 /* Lovers.jpg in Resources */,
+				292F70931AB2CEBA00985839 /* Star.jpg in Resources */,
+				292F70891AB2CEBA00985839 /* Fool.jpg in Resources */,
+				292F70881AB2CEBA00985839 /* Empress.jpg in Resources */,
+				292F708C1AB2CEBA00985839 /* Hermit.jpg in Resources */,
+				292F70961AB2CEBA00985839 /* Temperance.jpg in Resources */,
+				292F70941AB2CEBA00985839 /* Strength.jpg in Resources */,
+				DF5D1CB81AB1C4FE00174533 /* Main.storyboard in Resources */,
+				DF5D1CBD1AB1C4FE00174533 /* LaunchScreen.xib in Resources */,
+				292F70871AB2CEBA00985839 /* Emperor.jpg in Resources */,
+				292F70921AB2CEBA00985839 /* Moon.jpg in Resources */,
+				DF5D1CBA1AB1C4FE00174533 /* Images.xcassets in Resources */,
+				292F708B1AB2CEBA00985839 /* Heirophant.jpg in Resources */,
+				292F708A1AB2CEBA00985839 /* HangedMan.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF5D1CC01AB1C4FE00174533 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF5D1CA91AB1C4FD00174533 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF5D1D311AB1D20900174533 /* Model.swift in Sources */,
+				292F709B1AB2E26E00985839 /* MajorArcanaCard.swift in Sources */,
+				DF5D1CB51AB1C4FD00174533 /* ViewController.swift in Sources */,
+				DF5D1CB31AB1C4FD00174533 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF5D1CBE1AB1C4FE00174533 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF5D1CC91AB1C4FE00174533 /* TarotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DF5D1CC41AB1C4FE00174533 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF5D1CAC1AB1C4FD00174533 /* Tarot */;
+			targetProxy = DF5D1CC31AB1C4FE00174533 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DF5D1CB61AB1C4FE00174533 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF5D1CB71AB1C4FE00174533 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DF5D1CBB1AB1C4FE00174533 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF5D1CBC1AB1C4FE00174533 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DF5D1CCA1AB1C4FE00174533 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DF5D1CCB1AB1C4FE00174533 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF5D1CCD1AB1C4FE00174533 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Tarot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DF5D1CCE1AB1C4FE00174533 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Tarot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DF5D1CD01AB1C4FE00174533 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TarotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tarot.app/Tarot";
+			};
+			name = Debug;
+		};
+		DF5D1CD11AB1C4FE00174533 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TarotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tarot.app/Tarot";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF5D1CA81AB1C4FD00174533 /* Build configuration list for PBXProject "tarot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF5D1CCA1AB1C4FE00174533 /* Debug */,
+				DF5D1CCB1AB1C4FE00174533 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF5D1CCC1AB1C4FE00174533 /* Build configuration list for PBXNativeTarget "Tarot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF5D1CCD1AB1C4FE00174533 /* Debug */,
+				DF5D1CCE1AB1C4FE00174533 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF5D1CCF1AB1C4FE00174533 /* Build configuration list for PBXNativeTarget "TarotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF5D1CD01AB1C4FE00174533 /* Debug */,
+				DF5D1CD11AB1C4FE00174533 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DF5D1CA51AB1C4FD00174533 /* Project object */;
+}

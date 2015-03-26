@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tarot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="998" misplaced="YES" image="Fool.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="afS-iM-xAT">
+                                <rect key="frame" x="151" y="0.0" width="299" height="400"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&quot;Think of a question, then click button&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXJ-AG-A8M">
+                                <rect key="frame" x="151" y="408" width="299" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4B-x2-a5z">
+                                <rect key="frame" x="185" y="437" width="230" height="30"/>
+                                <state key="normal" title="Ask the Oracle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="askTheOracle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bMG-ap-HRY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="afS-iM-xAT" firstAttribute="centerX" secondItem="y4B-x2-a5z" secondAttribute="centerX" id="EGf-wC-VaC"/>
+                            <constraint firstItem="KXJ-AG-A8M" firstAttribute="width" secondItem="afS-iM-xAT" secondAttribute="width" id="GgP-Qq-MWZ"/>
+                            <constraint firstItem="y4B-x2-a5z" firstAttribute="top" secondItem="KXJ-AG-A8M" secondAttribute="bottom" constant="30" id="N6J-qB-mkv"/>
+                            <constraint firstAttribute="centerX" secondItem="afS-iM-xAT" secondAttribute="centerX" id="WTa-Vz-DfJ"/>
+                            <constraint firstItem="KXJ-AG-A8M" firstAttribute="top" secondItem="afS-iM-xAT" secondAttribute="bottom" constant="8" id="bFl-pb-3vt"/>
+                            <constraint firstItem="KXJ-AG-A8M" firstAttribute="leading" secondItem="afS-iM-xAT" secondAttribute="leading" id="nmh-Nk-nrk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="y4B-x2-a5z" secondAttribute="bottom" constant="10" id="wn3-2A-gzm"/>
+                            <constraint firstItem="afS-iM-xAT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="x0I-me-m84"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgCard" destination="afS-iM-xAT" id="yFI-Aa-JhN"/>
+                        <outlet property="lblAnswers" destination="KXJ-AG-A8M" id="56L-4z-RsI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Fool.jpg" width="300" height="519"/>
+    </resources>
+</document>
