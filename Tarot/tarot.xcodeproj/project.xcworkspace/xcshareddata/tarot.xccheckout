@@ -14,7 +14,7 @@
 		<string>https://github.com/lrocali/ISE.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Tarot Enum 2/tarot.xcodeproj</string>
+	<string>Tarot/tarot.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1023AC60317AC515B4E2BCBC1EB7C30BAAAD3F7C</key>
