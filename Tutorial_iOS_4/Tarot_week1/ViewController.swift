@@ -7,7 +7,7 @@ class ViewController: UIViewController
     
     // Property referencing the model for managing data and business logic
     
-    var model = Model()
+    var model = Model.sharedInstance
     var showingBack = false
     var front:UIImageView!
     var back:UIImageView!
@@ -58,7 +58,6 @@ class ViewController: UIViewController
             
             // Change the image in the UIImageView to the currently selected card
             cardImageView.image = UIImage(named:model.currentCard.imageName)
-            print(model.currentCard.imageName)
             cardImageView.hidden = false
             lblText.hidden = true
             fadedImageBackground.hidden = true

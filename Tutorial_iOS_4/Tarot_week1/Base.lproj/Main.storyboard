@@ -99,6 +99,38 @@
             </objects>
             <point key="canvasLocation" x="372" y="-173"/>
         </scene>
+        <!--Tarot Detail View Controller-->
+        <scene sceneID="yCu-0I-S9j">
+            <objects>
+                <viewController id="JRg-W7-q0Z" customClass="TarotDetailViewController" customModule="Tarot_week1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8t2-Tk-K6g"/>
+                        <viewControllerLayoutGuide type="bottom" id="SMb-QR-o06"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SKd-g8-6xk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Atl-hY-qhg">
+                                <rect key="frame" x="-11" y="-72" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" secondItem="Atl-hY-qhg" secondAttribute="height" id="Yqf-eU-Dfi"/>
+                            <constraint firstAttribute="centerX" secondItem="Atl-hY-qhg" secondAttribute="centerX" id="Yzs-ZS-zK3"/>
+                            <constraint firstAttribute="width" secondItem="Atl-hY-qhg" secondAttribute="width" id="f8V-sf-hGC"/>
+                            <constraint firstAttribute="centerY" secondItem="Atl-hY-qhg" secondAttribute="centerY" id="n6V-rB-v3F"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="Atl-hY-qhg" id="viD-NT-AV0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVj-Zt-Q7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1302" y="1427"/>
+        </scene>
         <!--Master Detail (Table View)-->
         <scene sceneID="xDi-jC-aWD">
             <objects>
@@ -121,10 +153,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master Detail (Table View)" id="h4P-G0-BtZ"/>
+                    <connections>
+                        <segue destination="JRg-W7-q0Z" kind="show" identifier="tarotCardDetail" id="C6X-cN-NCc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzx-jl-CfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="627"/>
+            <point key="canvasLocation" x="1470" y="611"/>
         </scene>
         <!--Master Detail-->
         <scene sceneID="G5q-Hr-eJt">

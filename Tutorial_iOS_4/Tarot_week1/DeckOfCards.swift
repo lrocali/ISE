@@ -16,9 +16,6 @@ struct DeckOfCards
         tableACard()
         
         putCardsBackInDeck()
-    
-        println()
-        
     }
     
     mutating func tableACard()

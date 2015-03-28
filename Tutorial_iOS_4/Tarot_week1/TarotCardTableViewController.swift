@@ -10,12 +10,27 @@ import UIKit
 
 class TarotCardTableViewController: UITableViewController {
 
-    var tarot = Model().deckOfCards
+    var tarot = Model.sharedInstance.deckOfCards
     
     override func tableView(tableView: UITableView, numberOfRowsInSection
         section: Int) -> Int
     {
         return tarot.deckOfCards.count;
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("tarotCardDetail", sender: tableView)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
+    {
+        let tarotCardDetailViewController =
+        segue.destinationViewController as UIViewController
+        let indexPath = self.tableView.indexPathForSelectedRow()!
+        let destinationTitle = self.tarot.deckOfCards[indexPath.row].imageName
+        tarotCardDetailViewController.title = destinationTitle
+        var detailsVC = segue.destinationViewController as TarotDetailViewController
+        detailsVC.cardName = destinationTitle;
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath

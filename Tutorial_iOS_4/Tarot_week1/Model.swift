@@ -6,13 +6,27 @@ import Foundation
 class Model
 {
     
+    private struct Static{
+        static var instance: Model?
+    }
+    
+    class var sharedInstance: Model{
+        if(Static.instance==nil){
+            Static.instance = Model()
+            println("Olha eu aqui!!")
+        }
+        println("Esquecerem de mim !!")
+        return Static.instance!
+    }
+    
+    
     //let majorArcanaCards:[String:MajorArcanaCard]
     var currentCard:MajorArcanaCard = MajorArcanaCard.Fool;
     
     var deckOfCards:DeckOfCards
     
     // Populate the model with a set of Major Arcana Cards
-    init()
+    private init()
     {
         deckOfCards = DeckOfCards()
     }
