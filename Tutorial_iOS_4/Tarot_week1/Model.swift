@@ -20,6 +20,7 @@ class Model
     }
     
     
+    
     //let majorArcanaCards:[String:MajorArcanaCard]
     var currentCard:MajorArcanaCard = MajorArcanaCard.Fool;
     
