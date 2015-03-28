@@ -15,6 +15,7 @@
 		DF171B1A1ABB9BBF0059F960 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF171B181ABB9BBF0059F960 /* LaunchScreen.xib */; };
 		DF171B261ABB9BC00059F960 /* Tarot_week1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF171B251ABB9BC00059F960 /* Tarot_week1Tests.swift */; };
 		DF171B5F1ABBA6270059F960 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF171B5E1ABBA6270059F960 /* Model.swift */; };
+		DF4586B71AC6B6D700CAD684 /* TarotCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4586B61AC6B6D700CAD684 /* TarotCardTableViewController.swift */; };
 		DF4F89241AC419EE003CAEBB /* DeckOfCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4F89231AC419EE003CAEBB /* DeckOfCards.swift */; };
 		DFCF08E01ABDEF0700047E2C /* Chariot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFCF08CA1ABDEF0700047E2C /* Chariot.jpg */; };
 		DFCF08E11ABDEF0700047E2C /* Death.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFCF08CB1ABDEF0700047E2C /* Death.jpg */; };
@@ -64,6 +65,7 @@
 		DF171B241ABB9BC00059F960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF171B251ABB9BC00059F960 /* Tarot_week1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarot_week1Tests.swift; sourceTree = "<group>"; };
 		DF171B5E1ABBA6270059F960 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		DF4586B61AC6B6D700CAD684 /* TarotCardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarotCardTableViewController.swift; sourceTree = "<group>"; };
 		DF4F89231AC419EE003CAEBB /* DeckOfCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckOfCards.swift; sourceTree = "<group>"; };
 		DFCF08CA1ABDEF0700047E2C /* Chariot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Chariot.jpg; path = tarotImages/Chariot.jpg; sourceTree = SOURCE_ROOT; };
 		DFCF08CB1ABDEF0700047E2C /* Death.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Death.jpg; path = tarotImages/Death.jpg; sourceTree = SOURCE_ROOT; };
@@ -170,6 +172,7 @@
 		DF171B2F1ABB9DCB0059F960 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DF4586B11AC6B0AA00CAD684 /* Background */,
 				DF171B301ABB9DE30059F960 /* MajorArcana */,
 			);
 			name = Images;
@@ -178,7 +181,6 @@
 		DF171B301ABB9DE30059F960 /* MajorArcana */ = {
 			isa = PBXGroup;
 			children = (
-				29B8D0971AC556200065F6E0 /* Background.png */,
 				DFCF08CA1ABDEF0700047E2C /* Chariot.jpg */,
 				DFCF08CB1ABDEF0700047E2C /* Death.jpg */,
 				DFCF08CC1ABDEF0700047E2C /* Devil.jpg */,
@@ -219,8 +221,17 @@
 			isa = PBXGroup;
 			children = (
 				DF171B111ABB9BBF0059F960 /* ViewController.swift */,
+				DF4586B61AC6B6D700CAD684 /* TarotCardTableViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		DF4586B11AC6B0AA00CAD684 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				29B8D0971AC556200065F6E0 /* Background.png */,
+			);
+			name = Background;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF4586B71AC6B6D700CAD684 /* TarotCardTableViewController.swift in Sources */,
 				DF4F89241AC419EE003CAEBB /* DeckOfCards.swift in Sources */,
 				DF171B5F1ABBA6270059F960 /* Model.swift in Sources */,
 				DFEE6F141ABED6F800D5018F /* MajorArcanaCard.swift in Sources */,
