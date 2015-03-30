@@ -23,4 +23,5 @@ struct Cinema {
     mutating func setMovie(movie:Movie){
         self.movies.append(movie)
     }
+    
 }

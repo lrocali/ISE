@@ -11,7 +11,7 @@ import Foundation
 class Model {
     
     var db = DBSimulator()
-    
+
     //Full list of Movies
     var allMovies:[Movie] = []
 
@@ -38,7 +38,7 @@ class Model {
     }
     
     func createCinemas() {
-        var numberOfCinemas = cinemas.count
+        var numberOfCinemas = db.allCinemas.count
         var numberOfAllMovies = allMovies.count
         
         for cinema in db.allCinemas {
@@ -46,12 +46,12 @@ class Model {
         }
     
         for indexCinema in 0..<numberOfCinemas {
-            for indexMovie in 0..<numberOfAllMovies{
+            for indexMovie in 0..<numberOfAllMovies - indexCinema{
                 cinemas[indexCinema].setMovie(allMovies[indexMovie])
             }
         }
         
-//        println(cinemas[1].movies[0].name)
+        //println(cinemas[1].movies[0].name)
 //        println(cinemas[1].movies[3].genre)
 //        println(cinemas[9].movies[0].synopsis)
         
@@ -59,28 +59,36 @@ class Model {
 
     func createMovies() {
         
-        var numberOfAllMovies = allMovies.count
+        var numberOfAllMovies = db.allMoviesName.count
         for index in 0..<numberOfAllMovies {
             allMovies.append(Movie(name:db.allMoviesName[index],genre:db.allMoviesGenre[index],synopsis:db.allMoviesSynopsis[index]))
         }
     }
     
     func fillSessions() {
-        var matrix = Array(count:7, repeatedValue:Array(count:5, repeatedValue:String()))
-        //var matrix = [[],[]]
+        var timeTable:[String] = []
+        var numberOfCinemas = cinemas.count
+        //var numberOfMovies = 1
+        var numberOfSessions = 35 //7days 5 sesseions/day
         
-        matrix[0][1] = "Hello Rocks"
+        //println(cinemas[0].movies[1].name)
         
-
-        println(matrix[0][1])
-//        
-//
-//        
-//        for indexCinema in 0..<numberOfCinemas {
-//            var numberOfMovies = cinema[indexCinema]
-//            for indexMovies in 0..<
-//        }
-//    
-    }
+        for indexCinema in 0..<numberOfCinemas {
+            var numberOfMovies = cinemas[indexCinema].movies.count
+            //println(numberOfMovies)
+            timeTable = []
+            for indexSession in 0..<numberOfSessions {
+                timeTable.append(cinemas[indexCinema].movies[indexSession%numberOfMovies].name)
+                cinemas[indexCinema].movies[indexSession%numberOfMovies].sessions.append(Session(day: indexSession/5+1, time: indexSession%5+1))
+                //println(1+indexSession/5)
+                //println(indexSession%5)
+            }
+            
+            
+        }
+        
+        //println(cinemas[1].movies[0].sessions[0].day)
     
+       // println(timeTable)
+    }
 }

@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF2345591AC96F5200FB0043 /* MovieSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2345581AC96F5200FB0043 /* MovieSearchTableViewController.swift */; };
+		DF3866481AC9A23400F98D3E /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3866471AC9A23400F98D3E /* MovieViewController.swift */; };
+		DF3866591AC9C15000F98D3E /* alittlechaos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF38664A1AC9C15000F98D3E /* alittlechaos.jpg */; };
+		DF38665A1AC9C15000F98D3E /* americansnipper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF38664B1AC9C15000F98D3E /* americansnipper.jpg */; };
+		DF38665B1AC9C15000F98D3E /* annie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF38664C1AC9C15000F98D3E /* annie.jpg */; };
+		DF38665C1AC9C15000F98D3E /* avengers-ageofultron.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF38664D1AC9C15000F98D3E /* avengers-ageofultron.jpg */; };
+		DF38665D1AC9C15000F98D3E /* bigeyes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF38664E1AC9C15000F98D3E /* bigeyes.jpg */; };
+		DF38665E1AC9C15000F98D3E /* bighero6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF38664F1AC9C15000F98D3E /* bighero6.jpg */; };
+		DF38665F1AC9C15000F98D3E /* birdman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF3866501AC9C15000F98D3E /* birdman.jpg */; };
+		DF3866601AC9C15000F98D3E /* chappie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF3866511AC9C15000F98D3E /* chappie.jpg */; };
+		DF3866611AC9C15000F98D3E /* cinderella.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF3866521AC9C15000F98D3E /* cinderella.jpg */; };
+		DF3866621AC9C15000F98D3E /* crazybeautifulyou.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF3866531AC9C15000F98D3E /* crazybeautifulyou.jpg */; };
+		DF3866631AC9C15000F98D3E /* fast&furious7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF3866541AC9C15000F98D3E /* fast&furious7.jpg */; };
+		DF3866641AC9C15000F98D3E /* fiftyshadesofgrey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF3866551AC9C15000F98D3E /* fiftyshadesofgrey.jpg */; };
+		DF3866651AC9C15000F98D3E /* focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF3866561AC9C15000F98D3E /* focus.jpg */; };
+		DF3866661AC9C15000F98D3E /* gethard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF3866571AC9C15000F98D3E /* gethard.jpg */; };
+		DF3866671AC9C15000F98D3E /* home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF3866581AC9C15000F98D3E /* home.jpg */; };
 		DF9B5CAC1AC6FAFB006C99B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B5CAB1AC6FAFB006C99B9 /* AppDelegate.swift */; };
 		DF9B5CB11AC6FAFB006C99B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF9B5CAF1AC6FAFB006C99B9 /* Main.storyboard */; };
 		DF9B5CB31AC6FAFB006C99B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF9B5CB21AC6FAFB006C99B9 /* Images.xcassets */; };
@@ -31,6 +48,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF2345581AC96F5200FB0043 /* MovieSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewController.swift; sourceTree = "<group>"; };
+		DF3866471AC9A23400F98D3E /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		DF38664A1AC9C15000F98D3E /* alittlechaos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = alittlechaos.jpg; path = ../../Images/alittlechaos.jpg; sourceTree = "<group>"; };
+		DF38664B1AC9C15000F98D3E /* americansnipper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = americansnipper.jpg; path = ../../Images/americansnipper.jpg; sourceTree = "<group>"; };
+		DF38664C1AC9C15000F98D3E /* annie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = annie.jpg; path = ../../Images/annie.jpg; sourceTree = "<group>"; };
+		DF38664D1AC9C15000F98D3E /* avengers-ageofultron.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "avengers-ageofultron.jpg"; path = "../../Images/avengers-ageofultron.jpg"; sourceTree = "<group>"; };
+		DF38664E1AC9C15000F98D3E /* bigeyes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bigeyes.jpg; path = ../../Images/bigeyes.jpg; sourceTree = "<group>"; };
+		DF38664F1AC9C15000F98D3E /* bighero6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bighero6.jpg; path = ../../Images/bighero6.jpg; sourceTree = "<group>"; };
+		DF3866501AC9C15000F98D3E /* birdman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = birdman.jpg; path = ../../Images/birdman.jpg; sourceTree = "<group>"; };
+		DF3866511AC9C15000F98D3E /* chappie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chappie.jpg; path = ../../Images/chappie.jpg; sourceTree = "<group>"; };
+		DF3866521AC9C15000F98D3E /* cinderella.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cinderella.jpg; path = ../../Images/cinderella.jpg; sourceTree = "<group>"; };
+		DF3866531AC9C15000F98D3E /* crazybeautifulyou.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = crazybeautifulyou.jpg; path = ../../Images/crazybeautifulyou.jpg; sourceTree = "<group>"; };
+		DF3866541AC9C15000F98D3E /* fast&furious7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "fast&furious7.jpg"; path = "../../Images/fast&furious7.jpg"; sourceTree = "<group>"; };
+		DF3866551AC9C15000F98D3E /* fiftyshadesofgrey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = fiftyshadesofgrey.jpg; path = ../../Images/fiftyshadesofgrey.jpg; sourceTree = "<group>"; };
+		DF3866561AC9C15000F98D3E /* focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = focus.jpg; path = ../../Images/focus.jpg; sourceTree = "<group>"; };
+		DF3866571AC9C15000F98D3E /* gethard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = gethard.jpg; path = ../../Images/gethard.jpg; sourceTree = "<group>"; };
+		DF3866581AC9C15000F98D3E /* home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = home.jpg; path = ../../Images/home.jpg; sourceTree = "<group>"; };
 		DF9B5CA61AC6FAFB006C99B9 /* Assignement1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignement1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9B5CAA1AC6FAFB006C99B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF9B5CAB1AC6FAFB006C99B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +100,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF3866491AC9C13700F98D3E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DF38664A1AC9C15000F98D3E /* alittlechaos.jpg */,
+				DF38664B1AC9C15000F98D3E /* americansnipper.jpg */,
+				DF38664C1AC9C15000F98D3E /* annie.jpg */,
+				DF38664D1AC9C15000F98D3E /* avengers-ageofultron.jpg */,
+				DF38664E1AC9C15000F98D3E /* bigeyes.jpg */,
+				DF38664F1AC9C15000F98D3E /* bighero6.jpg */,
+				DF3866501AC9C15000F98D3E /* birdman.jpg */,
+				DF3866511AC9C15000F98D3E /* chappie.jpg */,
+				DF3866521AC9C15000F98D3E /* cinderella.jpg */,
+				DF3866531AC9C15000F98D3E /* crazybeautifulyou.jpg */,
+				DF3866541AC9C15000F98D3E /* fast&furious7.jpg */,
+				DF3866551AC9C15000F98D3E /* fiftyshadesofgrey.jpg */,
+				DF3866561AC9C15000F98D3E /* focus.jpg */,
+				DF3866571AC9C15000F98D3E /* gethard.jpg */,
+				DF3866581AC9C15000F98D3E /* home.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		DF9B5C9D1AC6FAFB006C99B9 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +143,7 @@
 		DF9B5CA81AC6FAFB006C99B9 /* Assignement1 */ = {
 			isa = PBXGroup;
 			children = (
+				DF3866491AC9C13700F98D3E /* Images */,
 				DF9B5CCD1AC6FC2E006C99B9 /* VIew */,
 				DF9B5CCC1AC6FC29006C99B9 /* Model */,
 				DF9B5CCB1AC6FC23006C99B9 /* Controller */,
@@ -127,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				DF9B5CCE1AC6FCA0006C99B9 /* CinemaSearchTableViewController.swift */,
+				DF2345581AC96F5200FB0043 /* MovieSearchTableViewController.swift */,
+				DF3866471AC9A23400F98D3E /* MovieViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -231,9 +290,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF3866631AC9C15000F98D3E /* fast&furious7.jpg in Resources */,
+				DF3866611AC9C15000F98D3E /* cinderella.jpg in Resources */,
+				DF3866641AC9C15000F98D3E /* fiftyshadesofgrey.jpg in Resources */,
+				DF38665E1AC9C15000F98D3E /* bighero6.jpg in Resources */,
+				DF3866671AC9C15000F98D3E /* home.jpg in Resources */,
+				DF38665A1AC9C15000F98D3E /* americansnipper.jpg in Resources */,
+				DF3866591AC9C15000F98D3E /* alittlechaos.jpg in Resources */,
+				DF38665D1AC9C15000F98D3E /* bigeyes.jpg in Resources */,
 				DF9B5CB11AC6FAFB006C99B9 /* Main.storyboard in Resources */,
+				DF3866651AC9C15000F98D3E /* focus.jpg in Resources */,
+				DF3866601AC9C15000F98D3E /* chappie.jpg in Resources */,
+				DF38665F1AC9C15000F98D3E /* birdman.jpg in Resources */,
+				DF3866661AC9C15000F98D3E /* gethard.jpg in Resources */,
 				DF9B5CB61AC6FAFB006C99B9 /* LaunchScreen.xib in Resources */,
 				DF9B5CB31AC6FAFB006C99B9 /* Images.xcassets in Resources */,
+				DF38665C1AC9C15000F98D3E /* avengers-ageofultron.jpg in Resources */,
+				DF3866621AC9C15000F98D3E /* crazybeautifulyou.jpg in Resources */,
+				DF38665B1AC9C15000F98D3E /* annie.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +329,8 @@
 				DF9B5CD51AC6FFC7006C99B9 /* Model.swift in Sources */,
 				DF9B5CD31AC6FCDD006C99B9 /* MovieModel.swift in Sources */,
 				DF9B5CD11AC6FCB9006C99B9 /* CinemaModel.swift in Sources */,
+				DF2345591AC96F5200FB0043 /* MovieSearchTableViewController.swift in Sources */,
+				DF3866481AC9A23400F98D3E /* MovieViewController.swift in Sources */,
 				DF9B5CCF1AC6FCA0006C99B9 /* CinemaSearchTableViewController.swift in Sources */,
 				DF9B5CDD1AC73A8C006C99B9 /* SessionModel.swift in Sources */,
 				DF9B5CAC1AC6FAFB006C99B9 /* AppDelegate.swift in Sources */,
@@ -451,6 +527,7 @@
 				DF9B5CC71AC6FAFB006C99B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DF9B5CC81AC6FAFB006C99B9 /* Build configuration list for PBXNativeTarget "Assignement1Tests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +536,7 @@
 				DF9B5CCA1AC6FAFB006C99B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

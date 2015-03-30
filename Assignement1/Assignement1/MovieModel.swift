@@ -18,8 +18,21 @@ struct Movie {
     init(name:String,genre:String,synopsis:String) {
         self.name = name
         self.synopsis = synopsis
-        self.imageName =  name.lowercaseString
+        var lowerName =  name.lowercaseString + ".jpg"
         self.genre = genre
         self.sessions = []
+        
+        self.imageName = lowerName.condenseWhitespace()
+        
+        println(self.imageName)
+    }
+    
+    
+}
+
+extension String {
+    func condenseWhitespace() -> String {
+        let components = self.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).filter({!Swift.isEmpty($0)})
+        return "".join(components)
     }
 }

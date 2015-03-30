@@ -7,15 +7,14 @@
 //
 
 import Foundation
-
+ 
 struct Session {
     var time: Int
     var day: Int
     
     
-    init(time:Int, day:Int){
+    init(day:Int, time:Int){
         self.day = day
         self.time = time
     }
-    
 }

@@ -1,25 +1,28 @@
 //
-//  CinemaSearchTableViewController.swift
+//  MovieSearchTableViewController.swift
 //  Assignement1
 //
-//  Created by Mateus Cirolini on 29/03/2015.
+//  Created by Mateus Cirolini on 30/03/2015.
 //  Copyright (c) 2015 RMIT. All rights reserved.
 //
 
 import UIKit
 
-class CinemaSearchTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
+class MovieSearchTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate  {
 
     var model = Model.sharedInstance
     
-    var filteredCinemas = [Cinema]()
+    var chosenCinemaIndex:Int?
+    
+    var filteredMovies = [Movie]()
+    
     
     override func viewDidLoad() {
-        //println("oi to na controller")
-        //println(model.cinemas[0].movies[0].name)
+        //println("oi to na movue controller")
+        //println(chosenCinemaIndex!)
         super.viewDidLoad()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -27,25 +30,30 @@ class CinemaSearchTableViewController: UITableViewController, UISearchBarDelegat
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.searchDisplayController!.searchResultsTableView {
-            return self.filteredCinemas.count
-        } else {
-            return model.cinemas.count
+            return self.filteredMovies.count
         }
+        
+        else {
+            return self.model.cinemas[chosenCinemaIndex!].movies.count
+        }
+        //return self.model.cinemas[chosenCinemaIndex!].movies.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("cinemaCell", forIndexPath: indexPath) as UITableViewCell
-
-        var cinema : Cinema
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as UITableViewCell
+        
+        var movie : Movie
         
         if tableView == self.searchDisplayController!.searchResultsTableView {
-            cinema = filteredCinemas[indexPath.row]
-        } else {
-            cinema = self.model.cinemas[indexPath.row]
-
+            movie = filteredMovies[indexPath.row]
         }
         
-        cell.textLabel!.text = cinema.name
+        else {
+            movie = self.model.cinemas[chosenCinemaIndex!].movies[indexPath.row]
+            
+        }
+        
+        cell.textLabel!.text = movie.name
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell
@@ -53,8 +61,8 @@ class CinemaSearchTableViewController: UITableViewController, UISearchBarDelegat
     
     func filterContentForSearchText(searchText: String) {
         // Filter the array using the filter method
-        self.filteredCinemas = self.model.cinemas.filter({( cinema: Cinema) -> Bool in
-            let stringMatch = cinema.name.rangeOfString(searchText)
+        self.filteredMovies = self.model.cinemas[chosenCinemaIndex!].movies.filter({( movie: Movie) -> Bool in
+            let stringMatch = movie.name.rangeOfString(searchText)
             return (stringMatch != nil)
         })
     }
@@ -69,28 +77,31 @@ class CinemaSearchTableViewController: UITableViewController, UISearchBarDelegat
         return true
     }
     
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("cinemaToMovie", sender: tableView)
+        self.performSegueWithIdentifier("movieToDetail", sender: tableView)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "cinemaToMovie" {
-            let cinemaDetailViewController = segue.destinationViewController as UITableViewController
+        if segue.identifier == "movieToDetail" {
+            let movieDetailViewController = segue.destinationViewController as UIViewController
             if sender as UITableView == self.searchDisplayController!.searchResultsTableView {
                 let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
-                let destinationTitle = self.filteredCinemas[indexPath.row].name
-                cinemaDetailViewController.title = destinationTitle
+                let destinationTitle = self.filteredMovies[indexPath.row].name
+                movieDetailViewController.title = destinationTitle
                 
-                var chosenCinema = segue.destinationViewController as MovieSearchTableViewController
-                chosenCinema.chosenCinemaIndex = indexPath.row
+                var chosenMovie = segue.destinationViewController as MovieViewController
+                chosenMovie.chosenMovieIndex = indexPath.row
+                chosenMovie.chosenCinemaIndex = chosenCinemaIndex
             }
             else {
                 let indexPath = self.tableView.indexPathForSelectedRow()!
-                let destinationTitle = self.model.cinemas[indexPath.row].name
-                cinemaDetailViewController.title = destinationTitle
+                let destinationTitle = self.model.cinemas[chosenCinemaIndex!].movies[indexPath.row].name
+                movieDetailViewController.title = destinationTitle
                 
-                var chosenCinema = segue.destinationViewController as MovieSearchTableViewController
-                chosenCinema.chosenCinemaIndex = indexPath.row
+                var chosenMovie = segue.destinationViewController as MovieViewController
+                chosenMovie.chosenMovieIndex = indexPath.row
+                chosenMovie.chosenCinemaIndex = chosenCinemaIndex
             }
         }
     }

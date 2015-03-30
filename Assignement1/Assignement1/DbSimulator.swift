@@ -21,7 +21,7 @@ class DBSimulator {
             "A Little Chaos",
             "American Snipper",
             "Annie",
-            "Avengers: Age Of Ultron",
+            "Avengers - Age Of Ultron",
             "Big Eyes",
             "Big Hero 6",
             "Birdman",

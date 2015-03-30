@@ -2,18 +2,27 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="344-jR-LXQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Cinema Search-->
         <scene sceneID="Au6-xS-1JQ">
             <objects>
-                <tableViewController id="eGZ-8m-gNe" customClass="CinemaSearchTableViewController" customModule="Assignement1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="eGZ-8m-gNe" userLabel="Cinema Search" customClass="CinemaSearchTableViewController" customModule="Assignement1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wIs-ME-pM7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="LWc-Ar-ySD">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="eGZ-8m-gNe" id="twx-tY-8RR"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="odO-CT-ni1">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cinemaCell" id="odO-CT-ni1">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="odO-CT-ni1" id="xOS-x5-HWf">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -25,11 +34,71 @@
                             <outlet property="delegate" destination="eGZ-8m-gNe" id="PPG-p7-ptU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="vqR-EA-JGM"/>
+                    <navigationItem key="navigationItem" title="Cinema Search" id="vqR-EA-JGM"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="1j9-sZ-hSM" id="uoe-mU-Hd7"/>
+                        <segue destination="kFg-lY-4Q7" kind="show" identifier="cinemaToMovie" id="mT0-44-YcN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTQ-jr-xeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="1j9-sZ-hSM">
+                    <connections>
+                        <outlet property="delegate" destination="eGZ-8m-gNe" id="f9G-u8-Bny"/>
+                        <outlet property="searchBar" destination="LWc-Ar-ySD" id="amV-hI-07P"/>
+                        <outlet property="searchContentsController" destination="eGZ-8m-gNe" id="jZK-Ii-N42"/>
+                        <outlet property="searchResultsDataSource" destination="eGZ-8m-gNe" id="YaR-eV-L7b"/>
+                        <outlet property="searchResultsDelegate" destination="eGZ-8m-gNe" id="euH-ko-QWo"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="284" y="128"/>
+            <point key="canvasLocation" x="-1830" y="-482"/>
+        </scene>
+        <!--Movie Search-->
+        <scene sceneID="Nxj-As-Ghw">
+            <objects>
+                <tableViewController title="Movie Search" id="kFg-lY-4Q7" userLabel="Movie Search" customClass="MovieSearchTableViewController" customModule="Assignement1" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="T0C-GZ-ZbP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="tHX-Qm-TUU">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="kFg-lY-4Q7" id="j6s-II-0kf"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" id="XWH-4b-Iqu">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XWH-4b-Iqu" id="wb9-1V-CcY">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kFg-lY-4Q7" id="Av8-OI-Yof"/>
+                            <outlet property="delegate" destination="kFg-lY-4Q7" id="Vrq-94-VVL"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="JQ8-lu-1bW" id="8Zv-3v-BoJ"/>
+                        <segue destination="SsJ-ip-WqC" kind="show" identifier="movieToDetail" id="Wez-cU-7rG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uDB-hS-mwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="JQ8-lu-1bW">
+                    <connections>
+                        <outlet property="delegate" destination="kFg-lY-4Q7" id="mYA-LN-d2W"/>
+                        <outlet property="searchBar" destination="tHX-Qm-TUU" id="xii-aY-Fi8"/>
+                        <outlet property="searchContentsController" destination="kFg-lY-4Q7" id="vX2-1W-e7p"/>
+                        <outlet property="searchResultsDataSource" destination="kFg-lY-4Q7" id="Kuq-98-zcL"/>
+                        <outlet property="searchResultsDelegate" destination="kFg-lY-4Q7" id="1vi-Qe-8O6"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-1070" y="-482"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ufw-iX-io0">
@@ -45,7 +114,121 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRK-RR-jlF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-492" y="118"/>
+            <point key="canvasLocation" x="-2592" y="-482"/>
+        </scene>
+        <!--Book Movie-->
+        <scene sceneID="DxU-9J-e3E">
+            <objects>
+                <viewController id="SsJ-ip-WqC" userLabel="Book Movie" customClass="MovieViewController" customModule="Assignement1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lmg-QM-iZv"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Ne-9Z-wF7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XBw-S8-alU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLg-DC-vKA">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgK-Z6-KeY">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="alittlechaos.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="F38-DZ-c4V" userLabel="CoverImage">
+                                                <rect key="frame" x="224" y="30" width="140" height="208"/>
+                                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6J-gf-xEy" userLabel="Title">
+                                                <rect key="frame" x="279" y="20" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tU1-VN-fFC" userLabel="Genre">
+                                                <rect key="frame" x="281" y="251" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jb5-Ia-6GO" userLabel="Synopsis">
+                                                <rect key="frame" x="234" y="340" width="143" height="21"/>
+                                                <string key="text">"A drama centered on the awakening of the painter Margaret Keane, her phenomenal success in the 1950s, and the subsequent legal difficulties she had with her husband, who claimed credit for her works in the 1960s",</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1l-qJ-08O" userLabel="Sessions">
+                                                <rect key="frame" x="8" y="353" width="600" height="162"/>
+                                            </pickerView>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6W-sD-gPj" userLabel="BookButton">
+                                                <rect key="frame" x="310" y="500" width="46" height="30"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="askTheOracle:" destination="SsJ-ip-WqC" eventType="touchUpInside" id="Ru8-5Q-Jnz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="tU1-VN-fFC" firstAttribute="top" secondItem="F38-DZ-c4V" secondAttribute="bottom" constant="20" id="7Sm-mp-qCA"/>
+                                            <constraint firstItem="c6J-gf-xEy" firstAttribute="top" secondItem="mgK-Z6-KeY" secondAttribute="top" constant="20" id="Cne-oj-crX"/>
+                                            <constraint firstAttribute="height" constant="800" id="E5T-4w-prd"/>
+                                            <constraint firstItem="R1l-qJ-08O" firstAttribute="top" secondItem="jb5-Ia-6GO" secondAttribute="bottom" constant="20" id="KKn-Xd-iuU"/>
+                                            <constraint firstAttribute="centerX" secondItem="l6W-sD-gPj" secondAttribute="centerX" id="Wmh-HD-HEu"/>
+                                            <constraint firstAttribute="trailing" secondItem="jb5-Ia-6GO" secondAttribute="trailing" constant="10" id="XmI-B7-sRY"/>
+                                            <constraint firstItem="jb5-Ia-6GO" firstAttribute="leading" secondItem="mgK-Z6-KeY" secondAttribute="leading" constant="10" id="ZEM-Oj-3bn"/>
+                                            <constraint firstAttribute="centerX" secondItem="tU1-VN-fFC" secondAttribute="centerX" id="fpa-da-aqf"/>
+                                            <constraint firstItem="jb5-Ia-6GO" firstAttribute="top" secondItem="tU1-VN-fFC" secondAttribute="bottom" constant="20" id="h6b-Vh-3eo"/>
+                                            <constraint firstItem="l6W-sD-gPj" firstAttribute="top" secondItem="R1l-qJ-08O" secondAttribute="bottom" constant="20" id="iLU-YB-0pt"/>
+                                            <constraint firstAttribute="centerX" secondItem="jb5-Ia-6GO" secondAttribute="centerX" constant="-5.5" id="nqE-7h-Lw2"/>
+                                            <constraint firstItem="F38-DZ-c4V" firstAttribute="top" secondItem="c6J-gf-xEy" secondAttribute="bottom" constant="20" id="p7h-ha-xSZ"/>
+                                            <constraint firstAttribute="centerX" secondItem="R1l-qJ-08O" secondAttribute="centerX" id="rem-mN-Qsl"/>
+                                            <constraint firstAttribute="centerX" secondItem="c6J-gf-xEy" secondAttribute="centerX" id="x5p-JB-dML"/>
+                                            <constraint firstAttribute="centerX" secondItem="F38-DZ-c4V" secondAttribute="centerX" id="xlD-Fl-YFJ"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="nqE-7h-Lw2"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="mgK-Z6-KeY" secondAttribute="centerX" id="42i-dc-bxr"/>
+                                    <constraint firstItem="mgK-Z6-KeY" firstAttribute="leading" secondItem="nLg-DC-vKA" secondAttribute="leading" id="BXc-ox-6P8"/>
+                                    <constraint firstItem="mgK-Z6-KeY" firstAttribute="top" secondItem="nLg-DC-vKA" secondAttribute="top" id="Fy4-w0-RKS"/>
+                                    <constraint firstAttribute="width" secondItem="mgK-Z6-KeY" secondAttribute="width" id="HAd-0R-HbD"/>
+                                    <constraint firstAttribute="bottom" secondItem="mgK-Z6-KeY" secondAttribute="bottom" id="UjY-ZN-Re7"/>
+                                    <constraint firstAttribute="trailing" secondItem="mgK-Z6-KeY" secondAttribute="trailing" id="kgV-KW-bfw"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="nLg-DC-vKA" secondAttribute="centerX" id="0lb-Pq-2g9"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="nLg-DC-vKA" secondAttribute="bottom" id="YxK-S7-3E1"/>
+                            <constraint firstItem="8Ne-9Z-wF7" firstAttribute="top" secondItem="nLg-DC-vKA" secondAttribute="bottom" id="b6X-ad-SHw"/>
+                            <constraint firstItem="nLg-DC-vKA" firstAttribute="width" secondItem="XBw-S8-alU" secondAttribute="width" id="iZv-Lf-9zU"/>
+                            <constraint firstItem="nLg-DC-vKA" firstAttribute="top" secondItem="XBw-S8-alU" secondAttribute="topMargin" id="lp3-pJ-cIp"/>
+                            <constraint firstItem="nLg-DC-vKA" firstAttribute="top" secondItem="Lmg-QM-iZv" secondAttribute="bottom" id="nvq-sc-BLF"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <connections>
+                        <outlet property="imgNameMovie" destination="F38-DZ-c4V" id="PDR-DQ-jZx"/>
+                        <outlet property="lblGenreMovie" destination="tU1-VN-fFC" id="CtO-Uc-txh"/>
+                        <outlet property="lblSynopsisMovie" destination="jb5-Ia-6GO" id="Ckn-Tq-gpL"/>
+                        <outlet property="lblTitleMovie" destination="c6J-gf-xEy" id="klq-xh-geD"/>
+                        <outlet property="pkrSessionsMovie" destination="R1l-qJ-08O" id="8aw-du-UfE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c4P-dV-ayw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-172" y="-490"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alittlechaos.jpg" width="140" height="208"/>
+    </resources>
 </document>
