@@ -26,7 +26,7 @@ class MovieViewController: UIViewController, UISearchBarDelegate, UISearchDispla
     
     @IBAction func askTheOracle(sender: UIButton)
     {
-        println("oi to na sua bunda, IHAAAA")    }
+        println("Button Pressed - No functionality")    }
     
     override func viewDidLoad() {
         
