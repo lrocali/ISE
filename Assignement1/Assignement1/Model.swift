@@ -86,8 +86,10 @@ class Model {
             
             
         }
-        
-        //println(cinemas[1].movies[0].sessions[0].day)
+        var numSess = cinemas[1].movies[0].sessions.count
+        for i in 0..<numSess {
+            println(cinemas[1].movies[1].sessions[i].sess)
+        }
     
        // println(timeTable)
     }

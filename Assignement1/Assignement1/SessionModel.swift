@@ -13,6 +13,7 @@ struct Session {
     
     
     init(day:Int, time:Int){
-        sess = "hola"
+        var dbsessions = SessionGenerator()
+        sess = dbsessions.day[day]! + " " + dbsessions.time[time]!
     }
 }
