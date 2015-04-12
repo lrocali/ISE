@@ -18,8 +18,6 @@ class MovieSearchTableViewController: UITableViewController, UISearchBarDelegate
     
     
     override func viewDidLoad() {
-        //println("oi to na movue controller")
-        //println(chosenCinemaIndex!)
         super.viewDidLoad()
     }
     
@@ -36,7 +34,6 @@ class MovieSearchTableViewController: UITableViewController, UISearchBarDelegate
         else {
             return self.model.cinemas[chosenCinemaIndex!].movies.count
         }
-        //return self.model.cinemas[chosenCinemaIndex!].movies.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -50,7 +47,6 @@ class MovieSearchTableViewController: UITableViewController, UISearchBarDelegate
         
         else {
             movie = self.model.cinemas[chosenCinemaIndex!].movies[indexPath.row]
-            
         }
         
         cell.textLabel!.text = movie.name
@@ -93,8 +89,7 @@ class MovieSearchTableViewController: UITableViewController, UISearchBarDelegate
                 var chosenMovie = segue.destinationViewController as MovieViewController
                 chosenMovie.chosenMovieIndex = indexPath.row
                 chosenMovie.chosenCinemaIndex = chosenCinemaIndex
-            }
-            else {
+            } else {
                 let indexPath = self.tableView.indexPathForSelectedRow()!
                 let destinationTitle = self.model.cinemas[chosenCinemaIndex!].movies[indexPath.row].name
                 movieDetailViewController.title = destinationTitle

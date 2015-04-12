@@ -15,8 +15,6 @@ class CinemaSearchTableViewController: UITableViewController, UISearchBarDelegat
     var filteredCinemas = [Cinema]()
     
     override func viewDidLoad() {
-        //println("oi to na controller")
-        //println(model.cinemas[0].movies[0].name)
         super.viewDidLoad()
     }
 
@@ -83,8 +81,7 @@ class CinemaSearchTableViewController: UITableViewController, UISearchBarDelegat
                 
                 var chosenCinema = segue.destinationViewController as MovieSearchTableViewController
                 chosenCinema.chosenCinemaIndex = indexPath.row
-            }
-            else {
+            } else {
                 let indexPath = self.tableView.indexPathForSelectedRow()!
                 let destinationTitle = self.model.cinemas[indexPath.row].name
                 cinemaDetailViewController.title = destinationTitle

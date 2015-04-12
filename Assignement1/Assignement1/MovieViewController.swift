@@ -8,11 +8,13 @@
 
 import UIKit
 
-class MovieViewController: UIViewController, UISearchBarDelegate, UISearchDisplayDelegate  {
+class MovieViewController: UIViewController, UIPickerViewDelegate {
 
     var model = Model.sharedInstance
     var chosenCinemaIndex:Int?
     var chosenMovieIndex:Int?
+    var chosenSessionIndex:Int?
+    var selectedSession:String?
     
     @IBOutlet weak var lblTitleMovie: UILabel!
 
@@ -24,9 +26,13 @@ class MovieViewController: UIViewController, UISearchBarDelegate, UISearchDispla
  
     @IBOutlet weak var pkrSessionsMovie: UIPickerView!
     
-    @IBAction func askTheOracle(sender: UIButton)
-    {
-        println("Button Pressed - No functionality")    }
+    @IBAction func bookButton(sender: UIButton){
+        let alert = UIAlertView()
+        alert.title = "Booking details"
+        alert.message = "You have booked " + "'" + model.cinemas[chosenCinemaIndex!].movies[chosenMovieIndex!].name  + "'" + " for " + model.cinemas[chosenCinemaIndex!].movies[chosenMovieIndex!].sessions[chosenSessionIndex!].session + " at " +  model.cinemas[chosenCinemaIndex!].name
+        alert.addButtonWithTitle("Nice!")
+        alert.show()
+    }
     
     override func viewDidLoad() {
         
@@ -40,16 +46,35 @@ class MovieViewController: UIViewController, UISearchBarDelegate, UISearchDispla
         
         super.viewDidLoad()
         
-        println("oi to na sua bunda, IHAAAA")
-        println(chosenCinemaIndex!)
-        println(chosenMovieIndex!)
-  
-        
+        //Takes the first item from pickerView
+        selectedSession = model.cinemas[chosenCinemaIndex!].movies[chosenMovieIndex!].sessions[0].session
+        chosenSessionIndex = 0;
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) ->Int {
+        return 1
+    }
+
+    func pickerView (pickerView: UIPickerView, numberOfRowsInComponent component: Int) ->Int {
+        return model.cinemas[chosenCinemaIndex!].movies[chosenMovieIndex!].sessions.count
+    }
+    
+    func pickerView (pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return model.cinemas[chosenCinemaIndex!].movies[chosenMovieIndex!].sessions[row].session
+    }
+    
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        var selectedItem = model.cinemas[chosenCinemaIndex!].movies[chosenMovieIndex!].sessions[row].session
+        chosenSessionIndex = row
+        selectedSession = selectedItem
+    }
+        
 }

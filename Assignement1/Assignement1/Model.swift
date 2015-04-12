@@ -50,11 +50,6 @@ class Model {
                 cinemas[indexCinema].setMovie(allMovies[indexMovie])
             }
         }
-        
-        //println(cinemas[1].movies[0].name)
-//        println(cinemas[1].movies[3].genre)
-//        println(cinemas[9].movies[0].synopsis)
-        
     }
 
     func createMovies() {
@@ -68,29 +63,16 @@ class Model {
     func fillSessions() {
         var timeTable:[String] = []
         var numberOfCinemas = cinemas.count
-        //var numberOfMovies = 1
         var numberOfSessions = 35 //7days 5 sesseions/day
-        
-        //println(cinemas[0].movies[1].name)
         
         for indexCinema in 0..<numberOfCinemas {
             var numberOfMovies = cinemas[indexCinema].movies.count
-            //println(numberOfMovies)
             timeTable = []
             for indexSession in 0..<numberOfSessions {
                 timeTable.append(cinemas[indexCinema].movies[indexSession%numberOfMovies].name)
                 cinemas[indexCinema].movies[indexSession%numberOfMovies].sessions.append(Session(day: indexSession/5+1, time: indexSession%5+1))
-                //println(1+indexSession/5)
-                //println(indexSession%5)
+
             }
-            
-            
         }
-        var numSess = cinemas[1].movies[0].sessions.count
-        for i in 0..<numSess {
-            println(cinemas[1].movies[1].sessions[i].sess)
-        }
-    
-       // println(timeTable)
     }
 }

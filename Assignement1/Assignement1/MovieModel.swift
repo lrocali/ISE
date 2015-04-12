@@ -24,7 +24,7 @@ struct Movie {
         
         self.imageName = lowerName.condenseWhitespace()
         
-        println(self.imageName)
+        //println(self.imageName)
     }
     
     

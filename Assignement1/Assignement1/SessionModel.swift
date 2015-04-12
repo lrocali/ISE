@@ -9,11 +9,10 @@
 import Foundation
  
 struct Session {
-    var sess: String
-    
+    var session: String
     
     init(day:Int, time:Int){
         var dbsessions = SessionGenerator()
-        sess = dbsessions.day[day]! + " " + dbsessions.time[time]!
+        session = dbsessions.day[day]! + " " + dbsessions.time[time]!
     }
 }
