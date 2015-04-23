@@ -37,7 +37,7 @@ class MovieSearchTableViewController: UITableViewController, UISearchBarDelegate
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as! UITableViewCell
         
         var movie : Movie
         
@@ -80,13 +80,13 @@ class MovieSearchTableViewController: UITableViewController, UISearchBarDelegate
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "movieToDetail" {
-            let movieDetailViewController = segue.destinationViewController as UIViewController
-            if sender as UITableView == self.searchDisplayController!.searchResultsTableView {
+            let movieDetailViewController = segue.destinationViewController as! UIViewController
+            if sender as! UITableView == self.searchDisplayController!.searchResultsTableView {
                 let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
                 let destinationTitle = self.filteredMovies[indexPath.row].name
                 movieDetailViewController.title = destinationTitle
                 
-                var chosenMovie = segue.destinationViewController as MovieViewController
+                var chosenMovie = segue.destinationViewController as! MovieViewController
                 chosenMovie.chosenMovieIndex = indexPath.row
                 chosenMovie.chosenCinemaIndex = chosenCinemaIndex
             } else {
@@ -94,7 +94,7 @@ class MovieSearchTableViewController: UITableViewController, UISearchBarDelegate
                 let destinationTitle = self.model.cinemas[chosenCinemaIndex!].movies[indexPath.row].name
                 movieDetailViewController.title = destinationTitle
                 
-                var chosenMovie = segue.destinationViewController as MovieViewController
+                var chosenMovie = segue.destinationViewController as! MovieViewController
                 chosenMovie.chosenMovieIndex = indexPath.row
                 chosenMovie.chosenCinemaIndex = chosenCinemaIndex
             }
