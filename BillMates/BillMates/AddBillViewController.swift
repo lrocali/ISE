@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddBillViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+class AddBillViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var model = Model.sharedInstance
 
