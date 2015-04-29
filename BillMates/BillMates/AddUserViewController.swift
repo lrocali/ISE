@@ -51,7 +51,7 @@ class AddUserViewController: UIViewController, UITableViewDelegate, UITableViewD
             userImage = UIImage(named: userName + ".jpg")!
         }
         
-        cell.imageView!.image = userImageq q q
+        cell.imageView!.image = userImage
         cell.textLabel!.text = userName
         return cell
     }
