@@ -15,8 +15,12 @@ class AddUserViewController: UIViewController {
     @IBOutlet weak var txtName: UITextField!
     
     @IBAction func buttonAddUser(sender: UIButton) {
-        model.saveUser(name:txtName.text)
-        txtName.text = ""
+        
+        if !model.isTotallyEmpty(txtName.text) {
+            model.saveUser(name:txtName.text)
+            txtName.text = ""
+            self.view.endEditing(true)
+        }
     }
     @IBAction func buttonDeleteUser(sender: UIButton) {
         model.deleteUser(txtName.text)

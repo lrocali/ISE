@@ -21,17 +21,22 @@ class AddBillViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     @IBAction func doneAddBill(sender: UIBarButtonItem) {
-        model.saveBill(description: txtDescription.text, value: txtValue.text)
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        //println("Done Pressed")
+        if (!model.isTotallyEmpty(txtDescription.text) && !model.isTotallyEmpty(txtValue.text)) {
+            model.saveBill(description: txtDescription.text, value: txtValue.text)
+        
+            self.navigationController?.popToRootViewControllerAnimated(true)
+            self.view.endEditing(true)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         model.getUsers()
-        println(model.users[0].attName)
+        //println(model.users[0].attName)
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "userCell")
         tableView.delegate = self
-        println(model.users[1].attName)
+        //println(model.users[1].attName)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -43,23 +48,54 @@ class AddBillViewController: UIViewController,UITableViewDelegate,UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //println("You selected cell \(indexPath.row)")
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        
+        var userName : String = model.users[indexPath.row].attName
+        
+        
+        
+        if model.isAddedUser(userName){
+            model.removeAddedUsers(userName)
+        } else {
+            model.addAddedUsers(userName)
+        }
+        
+        
+        /*
+        var houseMate:HouseMate = self.model.houseMates[indexPath.row] as HouseMate
+        
+        houseMate.added = !houseMate.added
+
+        self.model.houseMates[indexPath.row] = houseMate*/
+        tableView.reloadData()
+    }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        println("count")
+        //println("count")
         return model.users.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("userCell", forIndexPath: indexPath) as! UITableViewCell
         
-        let user = model.getUser(indexPath)
+        let user = model.getUser(indexPath.row)
         cell.textLabel!.text = user.attName
-        println(indexPath.row)
-        //cell.detailTextLabel!.text = bill.attValue
         
-        //cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        let userName = user.attName
+        //println("addedUser")
+        if model.isAddedUser(userName){
+            //println("checked")
+            cell.accessoryType = .Checkmark
+        }
+        else{
+            //println("None\n")
+            cell.accessoryType = .None
+        }
         
 
         return cell

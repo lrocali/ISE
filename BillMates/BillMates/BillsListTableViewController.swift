@@ -15,8 +15,6 @@ class BillsListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         model.getBills()
-        
-
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -35,7 +33,8 @@ class BillsListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("billCell", forIndexPath: indexPath) as! UITableViewCell
 
-        let bill = model.getBill(indexPath)
+        
+        let bill = model.getBill(indexPath.row)
         cell.textLabel!.text = bill.attDescription
         cell.detailTextLabel!.text = bill.attValue
         
@@ -54,7 +53,7 @@ class BillsListTableViewController: UITableViewController {
         if editingStyle == UITableViewCellEditingStyle.Delete
         {
             
-            model.deleteBill(indexPath)
+            model.deleteBill(indexPath.row)
             
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
@@ -70,14 +69,14 @@ class BillsListTableViewController: UITableViewController {
         
         if segue.identifier == "BillsListToBillDetail"
         {
-            println("Segue!")
+            //println("Segue!")
             let indexPath = self.tableView.indexPathForSelectedRow()!
             let bill = self.model.bills[indexPath.row]
             var billDetail = segue.destinationViewController as! UIViewController
             billDetail.title = bill.attDescription
-            /*detailsVC.restaurantName = restaurant.getName()
-            detailsVC.restaurantPhone = restaurant.valueForKey("phone") as! String?
-            detailsVC.existingItem = restaurant*/
+           
+            var chosenBill = segue.destinationViewController as! BillDetailViewController
+            chosenBill.billCellIndex = indexPath.row
             
         }
     }

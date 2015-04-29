@@ -10,10 +10,34 @@ import UIKit
 
 class BillDetailViewController: UIViewController {
 
+    var model = Model.sharedInstance
+    
+    var billCellIndex: Int?
+    
+    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var lblValue: UILabel!
+    @IBOutlet weak var lblBillOwner: UILabel!
+    @IBOutlet weak var lblBillUsers: UILabel!
     override func viewDidLoad() {
+        //model.getBills()
+        //model.getUsers()
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //println(billCellIndex!)
+        var bill = model.getBill(billCellIndex!)
+        //println(bill.getBillOwner().attName)
+        
+        lblDescription.text = bill.getDescrition()
+        lblValue.text = bill.getValue()
+        lblBillOwner.text = bill.getBillOwner().attName
+        var users = bill.getBillUsers()
+        var usersNames:String = ""
+        for user in users {
+            usersNames = usersNames + user.attName + " - "
+        }
+        lblBillUsers.text = usersNames
+        /*for user in ([User])users {
+            println(user.attName)
+        }*/
     }
 
     override func didReceiveMemoryWarning() {

@@ -16,6 +16,8 @@ class Model {
     
     var users : [User] = [User]()
     
+    var addedUsers: [String] = [String]()
+    
     //Singleton
     private struct Static {
         static var instance: Model?
@@ -30,19 +32,19 @@ class Model {
         return Static.instance!
     }
     
-    func getBill(indexPath: NSIndexPath) -> Bill {
-        return bills[indexPath.row]
+    func getBill(index: Int) -> Bill {
+        return bills[index]
     }
     
-    func deleteBill(indexPath: NSIndexPath) {
-        let bill = bills[indexPath.row]
+    func deleteBill(index: Int) {
+        let bill = bills[index]
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
         managedContext.deleteObject(bill)
         
-        bills.removeAtIndex(indexPath.row)
+        bills.removeAtIndex(index)
         
         var error: NSError?
         if !managedContext.save(&error) {
@@ -71,26 +73,39 @@ class Model {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
-        
         let entity = NSEntityDescription.entityForName("Bill", inManagedObjectContext: managedContext)
         
+        //let managedContextUser = appDelegate.managedObjectContext!
+        //let entityUser = NSEntityDescription.entityForName("User", inManagedObjectContext: managedContextUser)
+        
         let bill = Bill(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        let billOwnerName = addedUsers[0]
+        
         bill.attDescription = description
         bill.attValue = value
+        bill.billOwner = getObjUser(billOwnerName)
+        
+        for i in 1..<addedUsers.count {
+            let billOwnerName = addedUsers[i]
+            bill.addBillUser(getObjUser(billOwnerName))
+        }
         self.bills.append(bill)
-        
-        
-            
+//        println(bill.billOwner.attName)
+        //println("Owner of \(bill.getDescrition()) is \(bill.getBillOwner().attName)")
+        //for user in addedUsers {
+            //println(user)
+        //}
+        addedUsers.removeAll(keepCapacity: false)
         var error: NSError?
         if !managedContext.save(&error) {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
     }
-    func getUser(indexPath: NSIndexPath) -> User {
-        return users[indexPath.row]
+    func getUser(index: Int) -> User {
+        return users[index]
     }
-    
-    
+
+
     func saveUser(#name:String) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -154,6 +169,52 @@ class Model {
             println("Name not found")
         }
     }
+    func addAddedUsers(name: String){
+        self.addedUsers.append(name)
+    }
     
-
+    func removeAddedUsers(name:String){
+        var index = -1
+        for i in 0..<addedUsers.count {
+            if (addedUsers[i] == name) {
+                index = i
+            }
+        }
+        if index >= 0{
+            addedUsers.removeAtIndex(index)
+        }
+    }
+    
+    func isAddedUser(name:String) -> Bool {
+        var index = -1
+        for i in 0..<addedUsers.count {
+            if (addedUsers[i] == name) {
+                index = i
+            }
+        }
+        if index >= 0{
+            return true
+        }
+        return false
+    }
+    
+    func isTotallyEmpty(text:String) -> Bool {
+        let trimmed = text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        
+        return trimmed.isEmpty
+    }
+    
+    func getObjUser (name:String) -> User {
+        var index = 0
+        for i in 0..<users.count {
+            //println("\(users[i].attName) - \(name)")
+            if (users[i].attName == name) {
+                //println("Foi")
+                index = i
+            }
+        }
+        //println(index)
+        return users[index]
+        
+    }
 }

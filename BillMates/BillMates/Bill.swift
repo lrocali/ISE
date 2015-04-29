@@ -12,12 +12,29 @@ import CoreData
 class Bill: NSManagedObject {
     @NSManaged var attDescription: String
     @NSManaged var attValue: String
+    @NSManaged var billOwner : User
+    @NSManaged var billUsers: NSSet
     
-    func getDescrition()->String {
+    func getDescrition()-> String {
         return self.attDescription as String
     }
     
-    func getValue()->String {
+    func getValue()-> String {
         return self.attValue as String
+    }
+    
+    func getBillOwner()->User {
+        return self.billOwner as User
+    }
+    
+    func getBillUsers()-> NSArray {
+        var billUser = self.mutableSetValueForKey("billUsers");
+        
+        return billUser.allObjects
+    }
+    
+    func addBillUser(user:User) {
+        var billUser = self.mutableSetValueForKey("billUsers");
+        billUser.addObject(user)
     }
 }
