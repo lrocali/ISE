@@ -33,18 +33,26 @@ class AddUserViewController: UIViewController, UITableViewDelegate, UITableViewD
         txtName.text = ""
     }
     
+//    @IBOutlet weak var addUserContactImage: UIImageView!
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return the number of cells
         return model.users.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("addedUsersCell", forIndexPath: indexPath) as! UITableViewCell
         
-        let user = model.getUser(indexPath.row)
-        cell.textLabel!.text = user.attName
+        let userName = model.getUser(indexPath.row).attName
+        var userImage : UIImage = UIImage(named: "blankContact.jpg")!
         
-        let userName = user.attName
+        if ((UIImage(named: userName + ".jpg")) != nil) {
+            println("Achou Imagem")
+            userImage = UIImage(named: userName + ".jpg")!
+        }
         
+        cell.imageView!.image = userImageq q q
+        cell.textLabel!.text = userName
         return cell
     }
 
