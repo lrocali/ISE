@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 import UIKit
+import Parse
+import ParseUI
 
 class Model {
     
@@ -18,10 +20,54 @@ class Model {
     
     var addedUsers: [String] = [String]()
     
+    var billObjects: NSMutableArray = NSMutableArray()
+    
+    
+    func fetchAllObjectsFromLocalDataStore(){
+        var query: PFQuery = PFQuery(className: "Bill")
+        query.fromLocalDatastore()
+        
+        
+        query.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+        
+        query.findObjectsInBackgroundWithBlock { (objects,error) -> Void in
+            if (error == nil){
+                var temp: NSArray = objects as! NSArray
+                //println(temp)
+                self.billObjects = temp.mutableCopy() as! NSMutableArray
+                println(self.billObjects.count)
+                
+            } else {
+                println(error?.userInfo)
+            }
+            
+        }
+    }
+    
+    func fetchAllObjects(){
+        //PFObject.unpinAllObjectsInBackgroundWithBlock(nil)
+        
+        var query: PFQuery = PFQuery(className: "Bill")
+        query.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+        
+        query.findObjectsInBackgroundWithBlock { (objects,error) -> Void in
+            if (error == nil){
+                PFObject.pinAllInBackground(objects,block:nil)
+                self.fetchAllObjectsFromLocalDataStore()
+            } else {
+                println(error?.userInfo)
+            }
+            
+        }
+        
+    }
+    
     //Singleton
     private struct Static {
         static var instance: Model?
     }
+    
+    
     
     private init(){}
     
@@ -32,8 +78,8 @@ class Model {
         return Static.instance!
     }
     
-    func getBill(index: Int) -> Bill {
-        return bills[index]
+    func getBill(index: Int) -> AnyObject {
+        return self.billObjects.objectAtIndex(index)
     }
     
     func deleteBill(index: Int) {

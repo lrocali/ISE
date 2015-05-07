@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class AddBillViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var model = Model.sharedInstance
+    
+    var object : PFObject!
 
     @IBOutlet weak var txtDescription: UITextField!
     @IBOutlet weak var txtValue: UITextField!
@@ -21,18 +25,35 @@ class AddBillViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func doneAddBill(sender: UIBarButtonItem) {
-        //println("Done Pressed")
-        if (!model.isTotallyEmpty(txtDescription.text) && !model.isTotallyEmpty(txtValue.text)) {
-            model.saveBill(description: txtDescription.text, value: txtValue.text)
         
-            self.navigationController?.popToRootViewControllerAnimated(true)
-            self.view.endEditing(true)
+        self.object["username"] = PFUser.currentUser()?.username
+        
+        self.object["description"] = txtDescription.text
+        self.object["value"] = txtValue.text.toInt()
+        
+        self.object.saveEventually { (success,error) -> Void in
+            if (error == nil){
+                println("Salvou!")
+            }
+            else {
+                println("Nao mandou..")
+            }
         }
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        //println("Done Pressed")
+        
+        //if (!model.isTotallyEmpty(txtDescription.text) && !model.isTotallyEmpty(txtValue.text)) {
+          //  model.saveBill(description: txtDescription.text, value: txtValue.text)
+        
+            //self.navigationController?.popToRootViewControllerAnimated(true)
+            //self.view.endEditing(true)
+        //}
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        model.getUsers()
+        self.object = PFObject(className: "Bill")
+        //model.getUsers()
         //println(model.users[0].attName)
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "userCell")
         tableView.delegate = self

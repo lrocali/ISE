@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class BillDetailViewController: UIViewController {
 
@@ -19,16 +21,20 @@ class BillDetailViewController: UIViewController {
     @IBOutlet weak var lblBillOwner: UILabel!
     @IBOutlet weak var lblBillUsers: UILabel!
     override func viewDidLoad() {
-        //model.getBills()
+        /*//model.getBills()
         //model.getUsers()
         super.viewDidLoad()
         //println(billCellIndex!)
-        var bill = model.getBill(billCellIndex!)
+        var object = model.getBill(billCellIndex!) as! PFObject
+        self.lblDescription.text = object["description"] as? String
+        self.lblValue.text = object["value"] as? String
+        
+        
         //println(bill.getBillOwner().attName)
         
-        lblDescription.text = bill.getDescrition()
+        /*lblDescription.text = bill.getDescrition()
         lblValue.text = bill.getValue()
-        lblBillOwner.text = bill.getBillOwner().attName
+        //lblBillOwner.text = bill.getBillOwner().attName
         var users = bill.getBillUsers()
         var usersNames:String = ""
         for user in users {
@@ -37,7 +43,7 @@ class BillDetailViewController: UIViewController {
         lblBillUsers.text = usersNames
         /*for user in ([User])users {
             println(user.attName)
-        }*/
+        }*/*/*/
     }
 
     override func didReceiveMemoryWarning() {

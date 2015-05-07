@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class BillsListTableViewController: UITableViewController {
 
@@ -14,10 +16,16 @@ class BillsListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        model.getBills()
+        //model.getBills()
+        //model.fetchAllObjectsFromLocalDataStore()
+        //model.fetchAllObjects()
+        self.tableView.reloadData()
     }
     
+    
     override func viewDidAppear(animated: Bool) {
+        //model.fetchAllObjectsFromLocalDataStore()
+        //model.fetchAllObjects()
         self.tableView.reloadData()
     }
 
@@ -26,23 +34,27 @@ class BillsListTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.bills.count
+        //return model.bills.count
+        return self.model.billObjects.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("billCell", forIndexPath: indexPath) as! UITableViewCell
 
-        
+        var object : PFObject = self.model.billObjects.objectAtIndex(indexPath.row) as! PFObject
+        cell.textLabel!.text = object["description"] as? String
+        cell.detailTextLabel!.text = object["value"] as? String
+        /*
         let bill = model.getBill(indexPath.row)
         cell.textLabel!.text = bill.attDescription
         cell.detailTextLabel!.text = bill.attValue
-        
+        */
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
 
         return cell
     }
-    
+    /*
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         let appDelegate =
@@ -58,7 +70,7 @@ class BillsListTableViewController: UITableViewController {
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
         
-    }
+    }*/
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("BillsListToBillDetail", sender: tableView)
@@ -71,12 +83,13 @@ class BillsListTableViewController: UITableViewController {
         {
             //println("Segue!")
             let indexPath = self.tableView.indexPathForSelectedRow()!
-            let bill = self.model.bills[indexPath.row]
+            let object : PFObject = self.model.billObjects[indexPath.row] as! PFObject
             var billDetail = segue.destinationViewController as! UIViewController
-            billDetail.title = bill.attDescription
+            billDetail.title = object["description"] as? String
+
            
-            var chosenBill = segue.destinationViewController as! BillDetailViewController
-            chosenBill.billCellIndex = indexPath.row
+            /*var chosenBill = segue.destinationViewController as! BillDetailViewController
+            chosenBill.billCellIndex = indexPath.row*/
             
         }
     }

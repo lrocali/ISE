@@ -47,7 +47,7 @@ class AddUserViewController: UIViewController, UITableViewDelegate, UITableViewD
         var userImage : UIImage = UIImage(named: "blankContact.jpg")!
         
         if ((UIImage(named: userName + ".jpg")) != nil) {
-            println("Achou Imagem")
+            //println("Achou Imagem")
             userImage = UIImage(named: userName + ".jpg")!
         }
         

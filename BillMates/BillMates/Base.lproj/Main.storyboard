@@ -279,10 +279,10 @@
             </objects>
             <point key="canvasLocation" x="2150" y="935"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Initial View Controller-->
         <scene sceneID="omb-Wz-QtB">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iD8-33-zEm" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iD8-33-zEm" customClass="InitialViewController" customModule="BillMates" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="gD0-JW-Z5c">
