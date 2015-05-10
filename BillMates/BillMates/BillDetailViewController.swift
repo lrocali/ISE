@@ -21,6 +21,23 @@ class BillDetailViewController: UIViewController {
     @IBOutlet weak var lblBillOwner: UILabel!
     @IBOutlet weak var lblBillUsers: UILabel!
     override func viewDidLoad() {
+        println(billCellIndex!)
+        
+        var object = model.getBill(billCellIndex!)
+        
+        //println(dbValue.description)
+        self.lblDescription.text = object["description"] as! String
+        var dbValue = object["value"] as! Double
+        self.lblValue.text = dbValue.description
+        self.lblBillOwner.text = object["paidBy"] as! String
+        var friends : Array<String>
+        friends = object["sharedWith"] as! Array<String>
+        var friendsStr : String = ""
+        for friend in friends {
+            friendsStr = friendsStr + friend + ", "
+        }
+        self.lblBillUsers.text = friendsStr
+    
         /*//model.getBills()
         //model.getUsers()
         super.viewDidLoad()

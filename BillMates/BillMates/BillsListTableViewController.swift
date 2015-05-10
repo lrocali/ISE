@@ -17,16 +17,21 @@ class BillsListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //model.getBills()
-        //model.fetchAllObjectsFromLocalDataStore()
-        //model.fetchAllObjects()
+        getData()
         self.tableView.reloadData()
     }
     
     
     override func viewDidAppear(animated: Bool) {
-        //model.fetchAllObjectsFromLocalDataStore()
-        //model.fetchAllObjects()
+        getData()
         self.tableView.reloadData()
+    }
+    
+    func getData() {
+        if (PFUser.currentUser() != nil){
+            model.fetchAllObjects()
+            //model.fetchAllObjectsFromLocalDataStore()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +49,8 @@ class BillsListTableViewController: UITableViewController {
 
         var object : PFObject = self.model.billObjects.objectAtIndex(indexPath.row) as! PFObject
         cell.textLabel!.text = object["description"] as? String
-        cell.detailTextLabel!.text = object["value"] as? String
+        //var valueTxt = String(format: "%.2f", object["value"]!)
+        cell.detailTextLabel!.text = object["value"]!.description as? String
         /*
         let bill = model.getBill(indexPath.row)
         cell.textLabel!.text = bill.attDescription
@@ -54,7 +60,7 @@ class BillsListTableViewController: UITableViewController {
 
         return cell
     }
-    /*
+    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         let appDelegate =
@@ -70,7 +76,7 @@ class BillsListTableViewController: UITableViewController {
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
         
-    }*/
+    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("BillsListToBillDetail", sender: tableView)
@@ -87,9 +93,9 @@ class BillsListTableViewController: UITableViewController {
             var billDetail = segue.destinationViewController as! UIViewController
             billDetail.title = object["description"] as? String
 
-           
-            /*var chosenBill = segue.destinationViewController as! BillDetailViewController
-            chosenBill.billCellIndex = indexPath.row*/
+           println("Cell n: \(indexPath.row)")
+            var chosenBill = segue.destinationViewController as! BillDetailViewController
+            chosenBill.billCellIndex = indexPath.row
             
         }
     }

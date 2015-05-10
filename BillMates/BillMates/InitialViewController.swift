@@ -11,6 +11,8 @@ import Parse
 import ParseUI
 
 class InitialViewController: UITabBarController,PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
+    
+    var model = Model.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,7 @@ class InitialViewController: UITabBarController,PFLogInViewControllerDelegate, P
         super.viewDidAppear(animated)
 
         if(PFUser.currentUser() == nil){
-            println("Log")
+            println("Log in")
             var loginViewController = PFLogInViewController()
             
             loginViewController.delegate = self
@@ -36,6 +38,8 @@ class InitialViewController: UITabBarController,PFLogInViewControllerDelegate, P
             self.presentViewController(loginViewController, animated: true, completion: nil)
         } else {
             println("Alread Logged")
+            model.fetchAllObjectsFromLocalDataStore()
+            model.fetchAllObjects()
            /* var billsListTableViewController = BillsListTableViewController()
             billsListTableViewController.fetchAllObjectsFromLocalDataStore()
             billsListTableViewController.fetchAllObjects()*/

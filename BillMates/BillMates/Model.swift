@@ -20,22 +20,46 @@ class Model {
     
     var addedUsers: [String] = [String]()
     
+    var friendObjects : NSMutableArray = NSMutableArray()
+    
     var billObjects: NSMutableArray = NSMutableArray()
     
     
     func fetchAllObjectsFromLocalDataStore(){
-        var query: PFQuery = PFQuery(className: "Bill")
-        query.fromLocalDatastore()
+        var queryBill: PFQuery = PFQuery(className: "Bill")
+        queryBill.fromLocalDatastore()
         
         
-        query.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+        queryBill.whereKey("username", equalTo: PFUser.currentUser()!.username!)
         
-        query.findObjectsInBackgroundWithBlock { (objects,error) -> Void in
+        queryBill.findObjectsInBackgroundWithBlock { (objects,error) -> Void in
             if (error == nil){
                 var temp: NSArray = objects as! NSArray
                 //println(temp)
-                self.billObjects = temp.mutableCopy() as! NSMutableArray
-                println(self.billObjects.count)
+                 if temp.count > 0 {
+                    self.billObjects = temp.mutableCopy() as! NSMutableArray
+                    println("Bills \(self.billObjects.count)")
+                }
+                
+            } else {
+                println(error?.userInfo)
+            }
+            
+        }// -
+        var queryFriend: PFQuery = PFQuery(className: "Friend")
+        queryFriend.fromLocalDatastore()
+        
+        
+        queryFriend.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+        
+        queryFriend.findObjectsInBackgroundWithBlock { (objects,error) -> Void in
+            if (error == nil){
+                var temp: NSArray = objects as! NSArray
+                //println(temp)
+                if temp.count > 0 {
+                    self.friendObjects = temp.mutableCopy() as! NSMutableArray
+                    println("Friends \(self.friendObjects.count)")
+                }
                 
             } else {
                 println(error?.userInfo)
@@ -45,12 +69,12 @@ class Model {
     }
     
     func fetchAllObjects(){
-        //PFObject.unpinAllObjectsInBackgroundWithBlock(nil)
+        PFObject.unpinAllObjectsInBackgroundWithBlock(nil)
         
-        var query: PFQuery = PFQuery(className: "Bill")
-        query.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+        var queryBill: PFQuery = PFQuery(className: "Bill")
+        queryBill.whereKey("username", equalTo: PFUser.currentUser()!.username!)
         
-        query.findObjectsInBackgroundWithBlock { (objects,error) -> Void in
+        queryBill.findObjectsInBackgroundWithBlock { (objects,error) -> Void in
             if (error == nil){
                 PFObject.pinAllInBackground(objects,block:nil)
                 self.fetchAllObjectsFromLocalDataStore()
@@ -60,8 +84,21 @@ class Model {
             
         }
         
+        var queryFriend: PFQuery = PFQuery(className: "Friend")
+        queryFriend.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+        
+        queryFriend.findObjectsInBackgroundWithBlock { (objects,error) -> Void in
+            if (error == nil){
+                PFObject.pinAllInBackground(objects,block:nil)
+                self.fetchAllObjectsFromLocalDataStore()
+            } else {
+                println(error?.userInfo)
+            }
+            
+        }
+
+        
     }
-    
     //Singleton
     private struct Static {
         static var instance: Model?
@@ -78,11 +115,33 @@ class Model {
         return Static.instance!
     }
     
-    func getBill(index: Int) -> AnyObject {
-        return self.billObjects.objectAtIndex(index)
+    func getBill(index: Int) -> PFObject {
+        return self.billObjects.objectAtIndex(index) as! PFObject
     }
     
     func deleteBill(index: Int) {
+        println("Delete at \(index)")
+        //println(billObjects)
+        
+        var bill = billObjects.objectAtIndex(index) as! PFObject
+        
+        
+        
+        var query = PFQuery(className:"Bill")
+        query.getObjectInBackgroundWithId(bill.objectId!) {
+            (bill: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                println(error)
+            } else {
+                bill?.deleteInBackground()
+            }}
+        
+        self.billObjects.removeObjectAtIndex(index)
+        //var object = billObjects.objectAtIndex(index) as! PFObject
+        //self.billObjects.
+        //println(billObjects)
+        
+        /*
         let bill = bills[index]
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -95,7 +154,7 @@ class Model {
         var error: NSError?
         if !managedContext.save(&error) {
             abort()
-        }
+        }*/
     }
     
     func getBills() {
@@ -116,6 +175,33 @@ class Model {
     }
     
     func saveBill(#description:String, value:String) {
+        var object : PFObject!
+        
+        object = PFObject(className: "Bill")
+        
+        object["username"] = PFUser.currentUser()?.username
+        
+        object["description"] = description
+        object["value"] = NSString(string: value).floatValue
+        
+        object["paidBy"] = PFUser.currentUser()?.username
+        
+        object["sharedWith"] = addedUsers
+        
+        
+        
+        object.saveEventually { (success,error) -> Void in
+            if (error == nil){
+                println("Salvou!")
+            }
+            else {
+                println("Nao mandou..")
+            }
+        }
+        
+        addedUsers.removeAll(keepCapacity: false)
+
+        /*
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
@@ -145,7 +231,7 @@ class Model {
         var error: NSError?
         if !managedContext.save(&error) {
             println("Could not fetch \(error), \(error!.userInfo)")
-        }
+        }*/
     }
     func getUser(index: Int) -> User {
         return users[index]
@@ -153,6 +239,23 @@ class Model {
 
 
     func saveUser(#name:String) {
+        var object : PFObject!
+        
+        object = PFObject(className: "Friend")
+        
+        object["username"] = PFUser.currentUser()?.username
+        
+        object["friendName"] = name
+        
+        object.saveEventually { (success,error) -> Void in
+            if (error == nil){
+                println("Salvou!")
+            }
+            else {
+                println("Nao mandou..")
+            }
+        }
+        /*
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext!
@@ -168,7 +271,7 @@ class Model {
         var error: NSError?
         if !managedContext.save(&error) {
             println("Could not fetch \(error), \(error!.userInfo)")
-        }
+        }*/
     }
 
     func getUsers() {
@@ -188,7 +291,25 @@ class Model {
         }
     }
     
-    func deleteUser(name: String) {
+    func deleteUser(index:Int) {
+        println("Delete at \(index)")
+        //println(billObjects)
+        
+        var user = friendObjects.objectAtIndex(index) as! PFObject
+        
+        
+        
+        var query = PFQuery(className:"Friend")
+        query.getObjectInBackgroundWithId(user.objectId!) {
+            (bill: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                println(error)
+            } else {
+                bill?.deleteInBackground()
+            }}
+        
+        self.friendObjects.removeObjectAtIndex(index)
+        /*
         var index = -1
         for i in 0..<users.count {
             if (users[i].attName == name) {
@@ -213,7 +334,7 @@ class Model {
         }
         else {
             println("Name not found")
-        }
+        }*/
     }
     func addAddedUsers(name: String){
         self.addedUsers.append(name)

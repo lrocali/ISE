@@ -14,7 +14,7 @@ class AddBillViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var model = Model.sharedInstance
     
-    var object : PFObject!
+    
 
     @IBOutlet weak var txtDescription: UITextField!
     @IBOutlet weak var txtValue: UITextField!
@@ -26,19 +26,10 @@ class AddBillViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func doneAddBill(sender: UIBarButtonItem) {
         
-        self.object["username"] = PFUser.currentUser()?.username
+        self.model.saveBill(description: txtDescription.text, value: txtValue.text)
         
-        self.object["description"] = txtDescription.text
-        self.object["value"] = txtValue.text.toInt()
+                
         
-        self.object.saveEventually { (success,error) -> Void in
-            if (error == nil){
-                println("Salvou!")
-            }
-            else {
-                println("Nao mandou..")
-            }
-        }
         self.navigationController?.popToRootViewControllerAnimated(true)
         //println("Done Pressed")
         
@@ -52,7 +43,7 @@ class AddBillViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.object = PFObject(className: "Bill")
+        
         //model.getUsers()
         //println(model.users[0].attName)
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "userCell")
@@ -73,14 +64,15 @@ class AddBillViewController: UIViewController, UITableViewDelegate, UITableViewD
         //println("You selected cell \(indexPath.row)")
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
-        var userName : String = model.users[indexPath.row].attName
+        var object : PFObject = self.model.friendObjects.objectAtIndex(indexPath.row) as! PFObject
+        let friendName = object["friendName"] as? String
         
         
         
-        if model.isAddedUser(userName){
-            model.removeAddedUsers(userName)
+        if model.isAddedUser(friendName!){
+            model.removeAddedUsers(friendName!)
         } else {
-            model.addAddedUsers(userName)
+            model.addAddedUsers(friendName!)
         }
         
         
@@ -98,18 +90,19 @@ class AddBillViewController: UIViewController, UITableViewDelegate, UITableViewD
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         //println("count")
-        return model.users.count
+        return model.friendObjects.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("userCell", forIndexPath: indexPath) as! UITableViewCell
         
-        let user = model.getUser(indexPath.row)
-        cell.textLabel!.text = user.attName
+        var object : PFObject = self.model.friendObjects.objectAtIndex(indexPath.row) as! PFObject
+        let friendName = object["friendName"] as? String
+        cell.textLabel!.text = friendName
+    
         
-        let userName = user.attName
         //println("addedUser")
-        if model.isAddedUser(userName){
+        if model.isAddedUser(friendName!){
             //println("checked")
             cell.accessoryType = .Checkmark
         }
@@ -117,7 +110,7 @@ class AddBillViewController: UIViewController, UITableViewDelegate, UITableViewD
             //println("None\n")
             cell.accessoryType = .None
         }
-        
+    
 
         return cell
     }
